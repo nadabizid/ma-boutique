@@ -5,6 +5,9 @@
   command = "npm run build"
   publish = ".next"
 
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
 # Toutes les requêtes /api/... du navigateur sont transmises à l'API hébergée sur Render.
 # Le navigateur ne parle donc qu'à un seul domaine (celui du site), ce qui permet aux cookies
 # de connexion admin de fonctionner sur tous les navigateurs, y compris Safari / iPhone.
