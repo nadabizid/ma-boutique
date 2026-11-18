@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --c-ivory: 247 243 236;
+  --c-surface: 239 232 219;
+  --c-ink: 38 36 31;
+  --c-forest: 65 82 60;
+  --c-forestDark: 46 58 42;
+  --c-brass: 168 130 79;
+  --c-clay: 181 113 75;
+  --c-line: 220 211 194;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(var(--c-ivory));
+  color: rgb(var(--c-ink));
+}
+
+::selection {
+  background-color: rgb(var(--c-forest));
+  color: rgb(var(--c-ivory));
+}
+
+.container-page {
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.btn-primary {
+  background-color: rgb(var(--c-forest));
+  color: rgb(var(--c-ivory));
+  padding: 0.75rem 1.5rem;
+  border-radius: 2px;
+  font-size: 0.95rem;
+  transition: background-color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.btn-primary:hover {
+  background-color: rgb(var(--c-forestDark));
+}
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-outline {
+  border: 1px solid rgb(var(--c-ink));
+  color: rgb(var(--c-ink));
+  padding: 0.7rem 1.4rem;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.btn-outline:hover {
+  background-color: rgb(var(--c-ink));
+  color: rgb(var(--c-ivory));
+}
+
+input, textarea, select {
+  outline: none;
+}
+input:focus, textarea:focus, select:focus {
+  box-shadow: 0 0 0 2px rgb(var(--c-forest));
+}
+
+.field-label {
+  font-size: 0.8rem;
+  color: rgb(var(--c-ink) / 0.65);
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+.field-input {
+  width: 100%;
+  border: 1px solid rgb(var(--c-line));
+  background-color: #fff;
+  padding: 0.6rem 0.75rem;
+  border-radius: 2px;
+  font-size: 0.95rem;
+}
+
+.btn-sm {
+  padding: 0.4rem 0.85rem;
+  font-size: 0.85rem;
+}
+.btn-danger {
+  border: 1px solid rgb(var(--c-clay));
+  color: rgb(var(--c-clay));
+  padding: 0.4rem 0.85rem;
+  font-size: 0.85rem;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+.btn-danger:hover {
+  background-color: rgb(var(--c-clay));
+  color: #fff;
+}
+.card {
+  background: #fff;
+  border: 1px solid rgb(var(--c-line));
+  border-radius: 4px;
+  padding: 1.25rem;
+}
+.table-admin th {
+  padding: 0.65rem 1rem;
+  text-align: left;
+  font-weight: 500;
+}
+.table-admin td {
+  padding: 0.65rem 1rem;
+}
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #fff !important;
+  }
+  .print-page {
+    page-break-after: always;
+    break-after: page;
+  }
+  .print-page:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
+}

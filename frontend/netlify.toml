@@ -1,0 +1,17 @@
+# Déploiement de la boutique (Next.js) sur Netlify.
+# Dans Netlify : Base directory = frontend (ce fichier est lu depuis ce dossier).
+
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+# Toutes les requêtes /api/... du navigateur sont transmises à l'API hébergée sur Render.
+# Le navigateur ne parle donc qu'à un seul domaine (celui du site), ce qui permet aux cookies
+# de connexion admin de fonctionner sur tous les navigateurs, y compris Safari / iPhone.
+#
+# ⚠️ À MODIFIER : remplace l'adresse ci-dessous par celle de TON API Render (sans / à la fin).
+[[redirects]]
+  from = "/api/*"
+  to = "https://TON-API.onrender.com/api/:splat"
+  status = 200
+  force = true
