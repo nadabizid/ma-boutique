@@ -12,6 +12,6 @@
 # ⚠️ À MODIFIER : remplace l'adresse ci-dessous par celle de TON API Render (sans / à la fin).
 [[redirects]]
   from = "/api/*"
-  to = "https://TON-API.onrender.com/api/:splat"
+  to = "https://ma-boutique-api-27z2.onrender.com/api/:splat"
   status = 200
   force = true
